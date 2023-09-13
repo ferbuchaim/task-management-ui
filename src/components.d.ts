@@ -6,19 +6,45 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface TmApp {
+    }
+    interface TmBoard {
+    }
 }
 declare global {
+    interface HTMLTmAppElement extends Components.TmApp, HTMLStencilElement {
+    }
+    var HTMLTmAppElement: {
+        prototype: HTMLTmAppElement;
+        new (): HTMLTmAppElement;
+    };
+    interface HTMLTmBoardElement extends Components.TmBoard, HTMLStencilElement {
+    }
+    var HTMLTmBoardElement: {
+        prototype: HTMLTmBoardElement;
+        new (): HTMLTmBoardElement;
+    };
     interface HTMLElementTagNameMap {
+        "tm-app": HTMLTmAppElement;
+        "tm-board": HTMLTmBoardElement;
     }
 }
 declare namespace LocalJSX {
+    interface TmApp {
+    }
+    interface TmBoard {
+    }
     interface IntrinsicElements {
+        "tm-app": TmApp;
+        "tm-board": TmBoard;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "tm-app": LocalJSX.TmApp & JSXBase.HTMLAttributes<HTMLTmAppElement>;
+            "tm-board": LocalJSX.TmBoard & JSXBase.HTMLAttributes<HTMLTmBoardElement>;
         }
     }
 }

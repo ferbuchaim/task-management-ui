@@ -1,12 +1,12 @@
 import { Component, h } from '@stencil/core';
 
 @Component({
-  tag: 'tm-app',
-  // styleUrl: './app.css',
+  tag: 'tm-board',
+  styleUrl: './board.css',
   shadow: true,
 })
-export class App {
+export class board {
   render() {
-    return <tm-board />;
+    return <h1>Test</h1>;
   }
 }
