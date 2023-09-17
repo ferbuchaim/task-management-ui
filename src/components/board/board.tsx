@@ -17,14 +17,15 @@ export class board {
     this.inputValue = (event.target as HTMLInputElement).value;
   }
 
-  onCloseButtonClick() {
-    this.inputValue = undefined;
-    this.dataContent = null;
-    this.hideButton = false;
+  setHideButton(value: boolean) {
+    this.hideButton = value;
   }
 
-  onAddNewList() {
-    this.hideButton = true;
+  setDataContent(hasData?: boolean) {
+    if (!hasData) {
+      this.dataContent = undefined;
+      return;
+    }
     this.dataContent = (
       <form onSubmit={this.onAddList.bind(this)}>
         <input class="list-placeholder" type="text" placeholder="Type in the list name..." value={this.inputValue} onInput={this.onUserInput.bind(this)} />
@@ -40,11 +41,22 @@ export class board {
     );
   }
 
+  onCloseButtonClick() {
+    this.inputValue = undefined;
+    this.dataContent = null;
+    this.setHideButton(false);
+  }
+
+  onClickList() {
+    this.setHideButton(true);
+    this.setDataContent(true);
+  }
+
   onAddList(event: Event) {
     event.preventDefault();
-    this.hideButton = false;
+    this.setHideButton(false);
     this.dataContent = null;
-    console.log('this.inputValue', this.inputValue);
+
     if (this.inputValue !== undefined) {
       if (this.inputValue.trim() !== '') {
         const listTitle = this.inputValue;
@@ -67,7 +79,7 @@ export class board {
           <div>{this.allLists}</div>
           <div class="add-list">
             {this.dataContent}
-            <button id="add-new-list-button" hidden={this.hideButton} onClick={this.onAddNewList.bind(this)}>
+            <button id="add-new-list-button" hidden={this.hideButton} onClick={this.onClickList.bind(this)}>
               + Click to add a new list
             </button>
           </div>
