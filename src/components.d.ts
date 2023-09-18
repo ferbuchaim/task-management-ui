@@ -12,6 +12,8 @@ export namespace Components {
     }
     interface TmCard {
     }
+    interface TmList {
+    }
 }
 declare global {
     interface HTMLTmAppElement extends Components.TmApp, HTMLStencilElement {
@@ -32,10 +34,17 @@ declare global {
         prototype: HTMLTmCardElement;
         new (): HTMLTmCardElement;
     };
+    interface HTMLTmListElement extends Components.TmList, HTMLStencilElement {
+    }
+    var HTMLTmListElement: {
+        prototype: HTMLTmListElement;
+        new (): HTMLTmListElement;
+    };
     interface HTMLElementTagNameMap {
         "tm-app": HTMLTmAppElement;
         "tm-board": HTMLTmBoardElement;
         "tm-card": HTMLTmCardElement;
+        "tm-list": HTMLTmListElement;
     }
 }
 declare namespace LocalJSX {
@@ -45,10 +54,13 @@ declare namespace LocalJSX {
     }
     interface TmCard {
     }
+    interface TmList {
+    }
     interface IntrinsicElements {
         "tm-app": TmApp;
         "tm-board": TmBoard;
         "tm-card": TmCard;
+        "tm-list": TmList;
     }
 }
 export { LocalJSX as JSX };
@@ -58,6 +70,7 @@ declare module "@stencil/core" {
             "tm-app": LocalJSX.TmApp & JSXBase.HTMLAttributes<HTMLTmAppElement>;
             "tm-board": LocalJSX.TmBoard & JSXBase.HTMLAttributes<HTMLTmBoardElement>;
             "tm-card": LocalJSX.TmCard & JSXBase.HTMLAttributes<HTMLTmCardElement>;
+            "tm-list": LocalJSX.TmList & JSXBase.HTMLAttributes<HTMLTmListElement>;
         }
     }
 }

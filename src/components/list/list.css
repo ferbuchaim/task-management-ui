@@ -1,0 +1,85 @@
+#list-title {
+  padding: 10px;
+  font-size: medium;
+  width: 274px;
+  border: 2px;
+  color: rgba(255, 255, 255, 0.24);
+}
+
+.list {
+  border-radius: 12px;
+  overflow-y: auto;
+  background-color: #101204;
+  display: inline-flex;
+  font-family: sans-serif;
+  margin: 10px;
+  border: 2px solid;
+}
+
+/* .list::-webkit-scrollbar {
+  background-color: rgba(255, 255, 255, 0.24);
+  height: 8px;
+  width: 8px;
+} */
+
+#add-new-list-button {
+  margin: 10px;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.24);
+  padding: 10px;
+  font-size: medium;
+  width: 274px;
+  border-radius: 12px;
+  border-color: rgba(255, 255, 255, 0.24);
+  color: white;
+}
+
+.list-placeholder {
+  color: white;
+  padding: 2.5px;
+  width: 265px;
+  font-family: sans-serif;
+  font-size: medium;
+  box-shadow: rgb(133, 184, 255) 0px 0px 0px 2px inset;
+  background-color: #22272b;
+  outline: none;
+  border: none;
+  margin-bottom: 8px;
+}
+
+::placeholder {
+  color: rgb(133, 184, 255);
+  padding: 8px 12px 8px 12px;
+}
+
+#add-button {
+  cursor: pointer;
+  height: 32px;
+  padding: 4px 10px 4px 10px;
+  font-size: medium;
+  border-radius: 3px;
+  background-color: #579dff;
+  justify-content: center;
+  padding: 6px 12px;
+  border: none;
+}
+
+form {
+  padding: 10px;
+  margin: 10px;
+  border-radius: 12px;
+  background-color: #101204;
+  font-family: sans-serif;
+  border: 2px solid;
+}
+
+.close-button {
+  border-radius: 3px;
+  border: none;
+  color: #44546f;
+  height: 32px;
+  font-size: medium;
+  background-color: initial;
+  cursor: pointer;
+  padding-top: 12px;
+}
