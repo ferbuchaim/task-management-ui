@@ -1,4 +1,6 @@
 #list-title {
+  white-space: break-spaces;
+  overflow-wrap: break-word;
   padding: 10px;
   font-size: medium;
   width: 274px;
@@ -8,19 +10,14 @@
 
 .list {
   border-radius: 12px;
-  overflow-y: auto;
+  overflow-x: auto;
+  max-height: 475px;
   background-color: #101204;
   display: inline-flex;
   font-family: sans-serif;
   margin: 10px;
   border: 2px solid;
 }
-
-/* .list::-webkit-scrollbar {
-  background-color: rgba(255, 255, 255, 0.24);
-  height: 8px;
-  width: 8px;
-} */
 
 #add-new-list-button {
   margin: 10px;

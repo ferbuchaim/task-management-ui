@@ -28,7 +28,7 @@ export class list {
     }
     this.dataContent = (
       <form onSubmit={this.onAddList.bind(this)}>
-        <input class="list-placeholder" type="text" placeholder="Type in the list name..." value={this.inputValue} onInput={this.onUserInput.bind(this)} />
+        <input class="list-placeholder" type="text" placeholder="Type in the list title..." value={this.inputValue} onInput={this.onUserInput.bind(this)} maxlength="100" />
         <div>
           <button id="add-button" type="submit">
             Add list
@@ -62,7 +62,7 @@ export class list {
         const listTitle = this.inputValue;
         this.newList = (
           <div class="list">
-            <span id="list-title">{listTitle}</span>
+            <div id="list-title">{listTitle}</div>
           </div>
         );
         this.allLists.push(this.newList);
