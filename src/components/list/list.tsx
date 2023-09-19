@@ -7,11 +7,15 @@ import { Component, h, State } from '@stencil/core';
 })
 export class list {
   @State() dataContent: HTMLFormElement;
-  @State() hideButton = false;
+  @State() hideButton: boolean;
 
   inputValue: string;
   allLists: HTMLElement[] = [];
   newList: HTMLElement;
+
+  componentWillLoad() {
+    this.onClickList();
+  }
 
   onUserInput(event: Event) {
     this.inputValue = (event.target as HTMLInputElement).value;
