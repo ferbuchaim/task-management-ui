@@ -15,6 +15,18 @@
   padding-right: 10px;
 }
 
+.list::-webkit-scrollbar {
+  background: #1b1a1a;
+  height: 8px;
+  width: 8px;
+  border-radius: 12px;
+}
+
+.list::-webkit-scrollbar-thumb {
+  background: #514f4f;
+  border-radius: 12px;
+}
+
 #edit-actions {
   cursor: pointer;
   font-size: medium;
@@ -30,7 +42,7 @@
 }
 
 .list {
-  cursor: move;
+  /* cursor: move; */
   vertical-align: top;
   border-radius: 12px;
   overflow-x: auto;
