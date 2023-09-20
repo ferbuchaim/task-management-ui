@@ -65,8 +65,12 @@ export class list {
       if (this.inputValue.trim() !== '') {
         const listTitle = this.inputValue;
         this.newList = (
-          <div class="list">
-            <div id="list-title">{listTitle}</div>
+          <div class="list" draggable={true}>
+            <div class="list-header">
+              <div class="list-title">{listTitle}</div>
+              <button id="edit-actions">...</button>
+            </div>
+            <tm-card class="tm-card"> </tm-card>
           </div>
         );
         this.allLists.push(this.newList);
@@ -77,7 +81,7 @@ export class list {
 
   render() {
     return [
-      <div>{this.allLists}</div>,
+      <div class="list-container">{this.allLists}</div>,
       <div class="add-list">
         {this.dataContent}
         <button id="add-new-list-button" hidden={this.hideButton} onClick={this.onClickList.bind(this)}>

@@ -1,19 +1,42 @@
-#list-title {
+.list-title {
   white-space: break-spaces;
   overflow-wrap: break-word;
   padding: 10px;
   font-size: medium;
-  width: 274px;
+  font-weight: bold;
+  margin: 10px;
+  width: 244px;
   border: 2px;
-  color: rgba(255, 255, 255, 0.24);
+  color: rgba(255, 255, 255, 0.663);
+}
+
+.list-header {
+  display: flex;
+  padding-right: 10px;
+}
+
+#edit-actions {
+  cursor: pointer;
+  font-size: medium;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.663);
+  display: block;
+  background-color: #101204;
+  padding: 10px;
+  border: 2px;
+  margin: 10px;
+  height: 14px;
+  width: 14px;
 }
 
 .list {
+  cursor: move;
+  vertical-align: top;
   border-radius: 12px;
   overflow-x: auto;
   max-height: 475px;
   background-color: #101204;
-  display: inline-flex;
+  display: inline-block;
   font-family: sans-serif;
   margin: 10px;
   border: 2px solid;
