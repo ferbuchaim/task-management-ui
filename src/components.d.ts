@@ -16,8 +16,6 @@ export namespace Components {
     }
     interface TmModal {
         "modalTitle": string;
-        "open": () => Promise<void>;
-        "opened": boolean;
     }
 }
 export interface TmCardCustomEvent<T> extends CustomEvent<T> {
@@ -75,7 +73,6 @@ declare namespace LocalJSX {
     }
     interface TmModal {
         "modalTitle"?: string;
-        "opened"?: boolean;
     }
     interface IntrinsicElements {
         "tm-app": TmApp;

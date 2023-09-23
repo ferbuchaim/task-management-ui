@@ -1,4 +1,4 @@
-import { Component, Method, Prop, h } from '@stencil/core';
+import { Component, Prop, h, State, Listen } from '@stencil/core';
 
 @Component({
   tag: 'tm-modal',
@@ -6,21 +6,37 @@ import { Component, Method, Prop, h } from '@stencil/core';
   shadow: true,
 })
 export class Modal {
-  @Prop({ reflect: true, mutable: true }) opened: boolean;
+  @State() opened: boolean;
   @Prop() modalTitle: string;
 
-  @Method()
-  open() {
-    this.opened = true;
-    // this.modalTitle =
+  modalElement: HTMLElement;
+
+  @Listen('cardClicked', { target: 'body' })
+  onCardClicked(event: CustomEvent) {
+    this.openModal(event.detail);
+  }
+
+  componentWillLoad() {
+    this.openModal(false);
+  }
+
+  openModal(open: boolean) {
+    this.opened = open;
   }
 
   render() {
-    return [
-      <div class="modalElement">
-        <div class="modalHeader">{this.modalTitle}</div>
-      </div>,
-      <div class="backdrop"></div>,
-    ];
+    if (this.opened) {
+      this.modalElement = (
+        <div>
+          <div class="modalElement">
+            <div class="modalHeader">{this.modalTitle}</div>
+          </div>
+          ,<div class="backdrop" onClick={() => this.openModal(false)}></div>
+        </div>
+      );
+    } else {
+      this.modalElement = undefined;
+    }
+    return this.modalElement;
   }
 }

@@ -1,4 +1,4 @@
-import { Component, State, h } from '@stencil/core';
+import { Component, State, h, Event, EventEmitter } from '@stencil/core';
 
 @Component({
   tag: 'tm-card',
@@ -8,6 +8,8 @@ import { Component, State, h } from '@stencil/core';
 export class Card {
   @State() dataContent: HTMLFormElement;
   @State() hideButton = false;
+
+  @Event({ bubbles: true, composed: true }) cardClicked: EventEmitter;
 
   allCards: HTMLElement[] = [];
   newCard: HTMLElement;
@@ -40,11 +42,21 @@ export class Card {
     if (this.inputValue !== undefined) {
       if (this.inputValue.trim() !== '') {
         const cardTitle = this.inputValue;
-        this.newCard = <div id="card-title">{cardTitle}</div>;
+        this.newCard = (
+          <div class="card-title" onClick={this.onClickedCard.bind(this)}>
+            {cardTitle}
+          </div>
+        );
         this.allCards.push(this.newCard);
       }
     }
     this.inputValue = undefined;
+  }
+
+  onClickedCard(event: Event) {
+    console.log(event);
+    this.cardClicked.emit(true);
+    console.log('ARERE');
   }
 
   setDataContent(hasData?: boolean) {
@@ -70,7 +82,7 @@ export class Card {
   render() {
     return [
       <div class="card-container">
-        {this.allCards}
+        <div class="all-cards">{this.allCards}</div>
         {this.dataContent}
         <button id="add-new-card-button" hidden={this.hideButton} onClick={this.onAddNewCard.bind(this)}>
           + Add a card

@@ -37,7 +37,7 @@ form {
   font-family: sans-serif;
 }
 
-#card-title {
+.card-title {
   white-space: break-spaces;
   overflow-wrap: break-word;
   padding: 10px;
