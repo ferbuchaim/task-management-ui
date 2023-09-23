@@ -15,7 +15,6 @@ export namespace Components {
     interface TmList {
     }
     interface TmModal {
-        "modalTitle": string;
     }
 }
 export interface TmCardCustomEvent<T> extends CustomEvent<T> {
@@ -72,7 +71,6 @@ declare namespace LocalJSX {
     interface TmList {
     }
     interface TmModal {
-        "modalTitle"?: string;
     }
     interface IntrinsicElements {
         "tm-app": TmApp;

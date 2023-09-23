@@ -12,6 +12,7 @@ export class Card {
   @Event({ bubbles: true, composed: true }) cardClicked: EventEmitter;
 
   allCards: HTMLElement[] = [];
+  cardTitles: string[] = [];
   newCard: HTMLElement;
   inputValue: string;
 
@@ -42,8 +43,9 @@ export class Card {
     if (this.inputValue !== undefined) {
       if (this.inputValue.trim() !== '') {
         const cardTitle = this.inputValue;
+        // this.cardTitles.push(cardTitle);
         this.newCard = (
-          <div class="card-title" onClick={this.onClickedCard.bind(this)}>
+          <div class="card-title" data-card-title={cardTitle} onClick={this.onClickedCard.bind(this)}>
             {cardTitle}
           </div>
         );
@@ -53,10 +55,9 @@ export class Card {
     this.inputValue = undefined;
   }
 
-  onClickedCard(event: Event) {
-    console.log(event);
-    this.cardClicked.emit(true);
-    console.log('ARERE');
+  onClickedCard(event: PointerEvent) {
+    const card = event.currentTarget;
+    this.cardClicked.emit(card);
   }
 
   setDataContent(hasData?: boolean) {
@@ -80,6 +81,7 @@ export class Card {
   }
 
   render() {
+    // debugger;
     return [
       <div class="card-container">
         <div class="all-cards">{this.allCards}</div>

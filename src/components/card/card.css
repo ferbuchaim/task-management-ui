@@ -1,6 +1,7 @@
 .card-container {
   display: block;
   border-radius: 8px;
+  max-width: 274px;
 }
 
 #add-new-card-button {

@@ -1,4 +1,5 @@
 import { Component, h } from '@stencil/core';
+
 @Component({
   tag: 'tm-board',
   styleUrl: './board.css',
@@ -10,6 +11,7 @@ export class board {
       <div class="board-view">
         <div class="board-container">
           <tm-list class="tm-list" />
+          <tm-modal></tm-modal>
         </div>
       </div>
     );

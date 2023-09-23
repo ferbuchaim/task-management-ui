@@ -1,4 +1,4 @@
-import { Component, Prop, h, State, Listen } from '@stencil/core';
+import { Component, h, State, Listen } from '@stencil/core';
 
 @Component({
   tag: 'tm-modal',
@@ -7,13 +7,14 @@ import { Component, Prop, h, State, Listen } from '@stencil/core';
 })
 export class Modal {
   @State() opened: boolean;
-  @Prop() modalTitle: string;
+  modalTitle: string;
 
   modalElement: HTMLElement;
 
   @Listen('cardClicked', { target: 'body' })
   onCardClicked(event: CustomEvent) {
-    this.openModal(event.detail);
+    this.openModal(true);
+    this.modalTitle = event.detail.outerText;
   }
 
   componentWillLoad() {

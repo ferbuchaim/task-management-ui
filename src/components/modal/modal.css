@@ -23,6 +23,7 @@
   border-radius: 12px;
   background-color: #22272b;
   padding: 20px;
+  white-space: break-spaces;
   overflow-wrap: break-word;
   color: rgba(255, 255, 255, 0.663);
   font-size: xx-large;
