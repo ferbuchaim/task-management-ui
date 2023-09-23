@@ -14,6 +14,15 @@ export namespace Components {
     }
     interface TmList {
     }
+    interface TmModal {
+        "modalTitle": string;
+        "open": () => Promise<void>;
+        "opened": boolean;
+    }
+}
+export interface TmCardCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLTmCardElement;
 }
 declare global {
     interface HTMLTmAppElement extends Components.TmApp, HTMLStencilElement {
@@ -40,11 +49,18 @@ declare global {
         prototype: HTMLTmListElement;
         new (): HTMLTmListElement;
     };
+    interface HTMLTmModalElement extends Components.TmModal, HTMLStencilElement {
+    }
+    var HTMLTmModalElement: {
+        prototype: HTMLTmModalElement;
+        new (): HTMLTmModalElement;
+    };
     interface HTMLElementTagNameMap {
         "tm-app": HTMLTmAppElement;
         "tm-board": HTMLTmBoardElement;
         "tm-card": HTMLTmCardElement;
         "tm-list": HTMLTmListElement;
+        "tm-modal": HTMLTmModalElement;
     }
 }
 declare namespace LocalJSX {
@@ -53,14 +69,20 @@ declare namespace LocalJSX {
     interface TmBoard {
     }
     interface TmCard {
+        "onCardClicked"?: (event: TmCardCustomEvent<any>) => void;
     }
     interface TmList {
+    }
+    interface TmModal {
+        "modalTitle"?: string;
+        "opened"?: boolean;
     }
     interface IntrinsicElements {
         "tm-app": TmApp;
         "tm-board": TmBoard;
         "tm-card": TmCard;
         "tm-list": TmList;
+        "tm-modal": TmModal;
     }
 }
 export { LocalJSX as JSX };
@@ -71,6 +93,7 @@ declare module "@stencil/core" {
             "tm-board": LocalJSX.TmBoard & JSXBase.HTMLAttributes<HTMLTmBoardElement>;
             "tm-card": LocalJSX.TmCard & JSXBase.HTMLAttributes<HTMLTmCardElement>;
             "tm-list": LocalJSX.TmList & JSXBase.HTMLAttributes<HTMLTmListElement>;
+            "tm-modal": LocalJSX.TmModal & JSXBase.HTMLAttributes<HTMLTmModalElement>;
         }
     }
 }
