@@ -10,7 +10,7 @@ export class board {
     return (
       <div class="board-view">
         <div class="board-container">
-          <tm-list class="tm-list" />
+          <tm-list-wrapper class="tm-list" />
           <tm-modal></tm-modal>
         </div>
       </div>

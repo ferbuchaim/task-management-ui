@@ -11,7 +11,7 @@ export class Modal {
 
   modalElement: HTMLElement;
 
-  @Listen('cardClicked', { target: 'body' })
+  @Listen('modal', { target: 'body' })
   onCardClicked(event: CustomEvent) {
     this.openModal(true);
     this.modalTitle = event.detail.outerText;

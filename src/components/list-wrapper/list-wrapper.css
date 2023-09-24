@@ -1,19 +1,10 @@
-.list-title {
-  white-space: break-spaces;
-  overflow-wrap: break-word;
+.tm-card-wrapper {
   padding: 10px;
-  font-size: medium;
-  font-weight: bold;
-  margin: 10px;
-  margin-bottom: 0px;
-  width: 220px;
-  border: 2px;
-  color: rgba(255, 255, 255, 0.663);
 }
 
 .list-header {
   display: flex;
-  margin: none;
+  padding-right: 10px;
 }
 
 .list::-webkit-scrollbar {
@@ -28,19 +19,19 @@
   border-radius: 12px;
 }
 
-/* #edit-actions {
+#edit-actions {
   cursor: pointer;
   font-size: medium;
   font-weight: bold;
   color: rgba(255, 255, 255, 0.663);
   display: block;
   background-color: #101204;
-  padding-right: 10px;
+  padding: 10px;
   border: 2px;
   margin: 10px;
   height: 14px;
   width: 14px;
-} */
+}
 
 .list {
   /* cursor: move; */
@@ -48,8 +39,7 @@
   border-radius: 12px;
   overflow-x: auto;
   max-height: 475px;
-  width: 290px;
-  /* max-width: 298px; */
+  max-width: 300px;
   background-color: #101204;
   display: inline-block;
   font-family: sans-serif;
