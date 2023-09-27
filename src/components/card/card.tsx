@@ -24,7 +24,7 @@ export class Card {
 
   render() {
     return (
-      <div class="container-button" ref={el => (this.card = el)}>
+      <div class="container-button" draggable={true} ref={el => (this.card = el)}>
         <div class="card-title" data-card-title={this.cardTitle} onClick={this.onOpenModal.bind(this)}>
           {this.cardTitle}
         </div>

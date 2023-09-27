@@ -64,13 +64,6 @@ export class ListWrapper {
     if (this.inputValue !== undefined) {
       if (this.inputValue.trim() !== '') {
         this.newList = <tm-list listTitle={this.inputValue} />;
-        // <div class="list" draggable={true}>
-        //   <div class="list-header">
-        //     <div class="list-title">{listTitle}</div>
-        //     <button id="edit-actions">...</button>
-        //   </div>
-        //   <tm-card-wrapper class="tm-card-wrapper" />
-        // </div>
         this.allLists.push(this.newList);
       }
     }

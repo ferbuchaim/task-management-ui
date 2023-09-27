@@ -28,28 +28,13 @@
   border-radius: 12px;
 }
 
-/* #edit-actions {
-  cursor: pointer;
-  font-size: medium;
-  font-weight: bold;
-  color: rgba(255, 255, 255, 0.663);
-  display: block;
-  background-color: #101204;
-  padding-right: 10px;
-  border: 2px;
-  margin: 10px;
-  height: 14px;
-  width: 14px;
-} */
-
 .list {
-  /* cursor: move; */
+  cursor: move;
   vertical-align: top;
   border-radius: 12px;
   overflow-x: auto;
   max-height: 475px;
   width: 290px;
-  /* max-width: 298px; */
   background-color: #101204;
   display: inline-block;
   font-family: sans-serif;
