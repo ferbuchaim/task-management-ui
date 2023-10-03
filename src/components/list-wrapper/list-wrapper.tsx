@@ -6,12 +6,12 @@ import { Component, h, State } from '@stencil/core';
   shadow: true,
 })
 export class ListWrapper {
-  @State() dataContent: HTMLFormElement;
-  @State() hideButton: boolean;
-
   inputValue: string;
   allLists: HTMLElement[] = [];
   newList: HTMLElement;
+
+  @State() dataContent: HTMLFormElement;
+  @State() hideButton: boolean;
 
   componentWillLoad() {
     this.onClickList();
