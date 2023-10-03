@@ -10,13 +10,8 @@ describe('tm-card', () => {
     expect(page.root).toEqualHtml(`
       <tm-card card-title="Test Card">
         <mock:shadow-root>
-          <div class="container-button" draggable="true">
-            <div class="card-title" data-card-title="Test Card">
-              Test Card
-            </div>
-            <button id="move-card-to-list">
-              <i>→</i>
-            </button>
+          <div class="card-title" data-card-title="Test Card">
+            Test Card
           </div>
         </mock:shadow-root>
       </tm-card>
