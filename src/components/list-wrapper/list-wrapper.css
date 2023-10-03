@@ -4,7 +4,7 @@
 
 .list-header {
   display: flex;
-  padding-right: 10px;
+  /* padding-right: 10px; */
 }
 
 .list::-webkit-scrollbar {

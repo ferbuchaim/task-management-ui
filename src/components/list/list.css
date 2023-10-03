@@ -6,14 +6,8 @@
   font-weight: bold;
   margin: 10px;
   margin-bottom: 0px;
-  width: 220px;
   border: 2px;
   color: rgba(255, 255, 255, 0.663);
-}
-
-.list-header {
-  display: flex;
-  margin: none;
 }
 
 .list::-webkit-scrollbar {

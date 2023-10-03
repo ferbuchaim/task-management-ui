@@ -59,7 +59,7 @@ export class CardWrapper {
     if (this.inputValue !== undefined) {
       if (this.inputValue.trim() !== '') {
         // this.cardTitles.push(cardTitle);
-        this.newCard = <tm-card class="tm-card" cardTitle={this.inputValue} onMoveCard={() => this.updateList} />;
+        this.newCard = <tm-card class="tm-card" cardTitle={this.inputValue} />;
         // this.newCard = <tm-card class="tm-card" cardTitle={this.inputValue} />;
         this.allCards.push(this.newCard);
       }

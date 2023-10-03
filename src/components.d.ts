@@ -92,7 +92,6 @@ declare namespace LocalJSX {
     interface TmCard {
         "cardTitle"?: string;
         "onModal"?: (event: TmCardCustomEvent<any>) => void;
-        "onMoveCard"?: (event: TmCardCustomEvent<any>) => void;
     }
     interface TmCardWrapper {
         "onGetCard"?: (event: TmCardWrapperCustomEvent<any>) => void;
