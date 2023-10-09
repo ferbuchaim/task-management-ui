@@ -11,7 +11,7 @@ export class board {
       <div class="board-view">
         <div class="board-container">
           <tm-list-wrapper class="tm-list" />
-          <tm-modal></tm-modal>
+          {/* <tm-modal /> */}
         </div>
       </div>
     );
