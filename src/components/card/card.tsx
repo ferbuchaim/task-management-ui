@@ -9,8 +9,6 @@ export class Card {
   @Prop() cardTitle: string;
   @Event({ bubbles: true, composed: true }) modal: EventEmitter;
 
-  card: HTMLElement;
-
   onOpenModal(event: PointerEvent) {
     const card = event.currentTarget;
     this.modal.emit(card);
