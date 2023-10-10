@@ -1,4 +1,5 @@
-import { Component, h, State } from '@stencil/core';
+import { Component, h, Host, State } from '@stencil/core';
+import { List } from '../list/list';
 
 @Component({
   tag: 'tm-list-wrapper',
@@ -7,8 +8,8 @@ import { Component, h, State } from '@stencil/core';
 })
 export class ListWrapper {
   inputValue: string;
-  allLists: HTMLElement[] = [];
-  newList: HTMLElement;
+  allLists: List[] = [];
+  newList: List;
 
   @State() dataContent: HTMLFormElement;
   @State() hideButton: boolean;
@@ -71,14 +72,16 @@ export class ListWrapper {
   }
 
   render() {
-    return [
-      <div class="list-container">{this.allLists}</div>,
-      <div class="add-list">
-        {this.dataContent}
-        <button id="add-new-list-button" hidden={this.hideButton} onClick={this.onClickList.bind(this)}>
-          + Click to add a new list
-        </button>
-      </div>,
-    ];
+    return (
+      <Host>
+        <div class="list-container">{this.allLists}</div>
+        <div class="add-list">
+          {this.dataContent}
+          <button id="add-new-list-button" hidden={this.hideButton} onClick={this.onClickList.bind(this)}>
+            + Click to add a new list
+          </button>
+        </div>
+      </Host>
+    );
   }
 }

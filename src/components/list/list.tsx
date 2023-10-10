@@ -5,7 +5,7 @@ import { Component, h, Prop } from '@stencil/core';
   styleUrl: './list.css',
   shadow: true,
 })
-export class Lists {
+export class List {
   @Prop() listTitle: string;
 
   render() {
@@ -14,7 +14,7 @@ export class Lists {
         <div class="list-header">
           <div class="list-title">{this.listTitle}</div>
         </div>
-        <tm-card-wrapper class="tm-card-wrapper" />
+        <tm-card-wrapper class="tm-card-wrapper" group="card-wrapper" />
       </div>
     );
   }
