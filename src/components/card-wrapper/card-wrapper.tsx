@@ -1,5 +1,6 @@
-import { Component, State, h, Event, EventEmitter, Listen } from '@stencil/core';
+import { Component, State, h, Event, EventEmitter, Host, Prop } from '@stencil/core';
 import { Card } from '../card/card';
+import Sortable from 'sortablejs';
 
 @Component({
   tag: 'tm-card-wrapper',
@@ -7,24 +8,26 @@ import { Card } from '../card/card';
   shadow: true,
 })
 export class CardWrapper {
-  @State() dataContent: HTMLFormElement;
-  @State() hideButton = false;
-  @State() cardSelected: HTMLElement;
-
-  @Event({ bubbles: true, composed: true }) modal: EventEmitter;
-  @Event({ bubbles: true, composed: true }) getCard: EventEmitter;
-
+  cardContainer: HTMLElement;
   allCards: Card[] = [];
   cardTitles: string[] = [];
   newCard: Card;
   inputValue: string;
 
-  @Listen('moveCard', { target: 'body' })
-  updateList(selectedCard: CustomEvent) {
-    const textSelected = selectedCard.detail.outerText;
-    const hasCard = this.allCards.find((card: any) => card?.$attrs$?.cardTitle === textSelected);
-    // console.log(hasCard);
-    this.allCards.push(hasCard);
+  @State() dataContent: HTMLFormElement;
+  @State() hideButton = false;
+  @State() cardSelected: HTMLElement;
+
+  @Prop() group: string;
+
+  @Event({ bubbles: true, composed: true }) modal: EventEmitter;
+
+  componentDidLoad() {
+    Sortable.create(this.cardContainer, {
+      animation: 150,
+      group: this.group,
+      ghostClass: 'ghost',
+    });
   }
 
   onAddNewCard() {
@@ -58,9 +61,7 @@ export class CardWrapper {
 
     if (this.inputValue !== undefined) {
       if (this.inputValue.trim() !== '') {
-        // this.cardTitles.push(cardTitle);
         this.newCard = <tm-card class="tm-card" cardTitle={this.inputValue} />;
-        // this.newCard = <tm-card class="tm-card" cardTitle={this.inputValue} />;
         this.allCards.push(this.newCard);
       }
     }
@@ -88,14 +89,18 @@ export class CardWrapper {
   }
 
   render() {
-    return [
-      <div class="card-container">
-        <div class="all-cards">{this.allCards}</div>
-        {this.dataContent}
-        <button id="add-new-card-button" hidden={this.hideButton} onClick={this.onAddNewCard.bind(this)}>
-          + Add a card
-        </button>
-      </div>,
-    ];
+    return (
+      <Host>
+        <div class="card-container" ref={el => (this.cardContainer = el as HTMLElement)}>
+          {this.allCards}
+        </div>
+        <div>
+          {this.dataContent}
+          <button id="add-new-card-button" hidden={this.hideButton} onClick={this.onAddNewCard.bind(this)}>
+            + Add a card
+          </button>
+        </div>
+      </Host>
+    );
   }
 }

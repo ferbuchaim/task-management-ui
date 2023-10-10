@@ -14,6 +14,7 @@ export namespace Components {
         "cardTitle": string;
     }
     interface TmCardWrapper {
+        "group": string;
     }
     interface TmList {
         "listTitle": string;
@@ -94,7 +95,7 @@ declare namespace LocalJSX {
         "onModal"?: (event: TmCardCustomEvent<any>) => void;
     }
     interface TmCardWrapper {
-        "onGetCard"?: (event: TmCardWrapperCustomEvent<any>) => void;
+        "group"?: string;
         "onModal"?: (event: TmCardWrapperCustomEvent<any>) => void;
     }
     interface TmList {

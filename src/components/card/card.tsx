@@ -18,7 +18,7 @@ export class Card {
 
   render() {
     return (
-      <div class="card-title" data-card-title={this.cardTitle} onClick={this.onOpenModal.bind(this)}>
+      <div class="card-title" data-card-title={this.cardTitle} draggable={true} onClick={this.onOpenModal.bind(this)}>
         {this.cardTitle}
       </div>
     );
