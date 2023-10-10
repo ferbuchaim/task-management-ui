@@ -15,7 +15,7 @@ describe('tm-list', () => {
             <div class="list-header">
               <div class="list-title">Test List</div>
             </div>
-            <tm-card-wrapper class="tm-card-wrapper"></tm-card-wrapper>
+            <tm-card-wrapper class="tm-card-wrapper" group="card-wrapper"></tm-card-wrapper>
           </div>
         </mock:shadow-root>
       </tm-list>

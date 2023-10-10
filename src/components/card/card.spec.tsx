@@ -10,7 +10,7 @@ describe('tm-card', () => {
     expect(page.root).toEqualHtml(`
       <tm-card card-title="Test Card">
         <mock:shadow-root>
-          <div class="card-title" data-card-title="Test Card">
+          <div class="card-title" data-card-title="Test Card" draggable="true">
             Test Card
           </div>
         </mock:shadow-root>
