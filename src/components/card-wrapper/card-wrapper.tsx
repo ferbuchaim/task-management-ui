@@ -10,7 +10,6 @@ import Sortable from 'sortablejs';
 export class CardWrapper {
   cardContainer: HTMLElement;
   allCards: Card[] = [];
-  cardTitles: string[] = [];
   newCard: Card;
   inputValue: string;
 

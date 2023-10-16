@@ -21,8 +21,6 @@ export namespace Components {
     }
     interface TmListWrapper {
     }
-    interface TmModal {
-    }
 }
 export interface TmCardCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -69,12 +67,6 @@ declare global {
         prototype: HTMLTmListWrapperElement;
         new (): HTMLTmListWrapperElement;
     };
-    interface HTMLTmModalElement extends Components.TmModal, HTMLStencilElement {
-    }
-    var HTMLTmModalElement: {
-        prototype: HTMLTmModalElement;
-        new (): HTMLTmModalElement;
-    };
     interface HTMLElementTagNameMap {
         "tm-app": HTMLTmAppElement;
         "tm-board": HTMLTmBoardElement;
@@ -82,7 +74,6 @@ declare global {
         "tm-card-wrapper": HTMLTmCardWrapperElement;
         "tm-list": HTMLTmListElement;
         "tm-list-wrapper": HTMLTmListWrapperElement;
-        "tm-modal": HTMLTmModalElement;
     }
 }
 declare namespace LocalJSX {
@@ -103,8 +94,6 @@ declare namespace LocalJSX {
     }
     interface TmListWrapper {
     }
-    interface TmModal {
-    }
     interface IntrinsicElements {
         "tm-app": TmApp;
         "tm-board": TmBoard;
@@ -112,7 +101,6 @@ declare namespace LocalJSX {
         "tm-card-wrapper": TmCardWrapper;
         "tm-list": TmList;
         "tm-list-wrapper": TmListWrapper;
-        "tm-modal": TmModal;
     }
 }
 export { LocalJSX as JSX };
@@ -125,7 +113,6 @@ declare module "@stencil/core" {
             "tm-card-wrapper": LocalJSX.TmCardWrapper & JSXBase.HTMLAttributes<HTMLTmCardWrapperElement>;
             "tm-list": LocalJSX.TmList & JSXBase.HTMLAttributes<HTMLTmListElement>;
             "tm-list-wrapper": LocalJSX.TmListWrapper & JSXBase.HTMLAttributes<HTMLTmListWrapperElement>;
-            "tm-modal": LocalJSX.TmModal & JSXBase.HTMLAttributes<HTMLTmModalElement>;
         }
     }
 }
