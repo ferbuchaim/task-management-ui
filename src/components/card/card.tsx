@@ -1,4 +1,4 @@
-import { Component, Event, EventEmitter, Prop, h } from '@stencil/core';
+import { Component, Event, EventEmitter, Host, Prop, h } from '@stencil/core';
 
 @Component({
   tag: 'tm-card',
@@ -16,9 +16,11 @@ export class Card {
 
   render() {
     return (
-      <div class="card-title" data-card-title={this.cardTitle} draggable={true} onClick={this.onOpenModal.bind(this)}>
-        {this.cardTitle}
-      </div>
+      <Host>
+        <div class="card-title" data-card-title={this.cardTitle} draggable={true} onClick={this.onOpenModal.bind(this)}>
+          {this.cardTitle}
+        </div>
+      </Host>
     );
   }
 }

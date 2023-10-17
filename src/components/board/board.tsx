@@ -1,4 +1,4 @@
-import { Component, h } from '@stencil/core';
+import { Component, h, Host } from '@stencil/core';
 
 @Component({
   tag: 'tm-board',
@@ -8,12 +8,14 @@ import { Component, h } from '@stencil/core';
 export class board {
   render() {
     return (
-      <div class="board-view">
-        <div class="board-container">
-          <tm-list-wrapper class="tm-list" />
-          {/* <tm-modal /> */}
+      <Host>
+        <div class="board-view">
+          <div class="board-container">
+            <tm-list-wrapper class="tm-list" />
+            {/* <tm-modal /> */}
+          </div>
         </div>
-      </div>
+      </Host>
     );
   }
 }
