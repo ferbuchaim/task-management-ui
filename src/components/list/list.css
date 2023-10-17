@@ -27,7 +27,8 @@
   vertical-align: top;
   border-radius: 12px;
   overflow-x: auto;
-  max-height: 475px;
+  max-height: 90vh;
+  /* max-height: 475px; */
   width: 290px;
   background-color: #101204;
   display: inline-block;
